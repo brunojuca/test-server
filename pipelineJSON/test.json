@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "id": "test",
+  "name": "Test",
+  "description": "Returns given inputs as outputs",
+  "input": [
+      {
+        "id": "image",
+        "name": "Image",
+        "description": "Test image that will be sent back",
+        "type": "file",
+        "required": true,
+        "accept": [
+            "image/*"
+        ]
+      },
+      {
+        "id": "video",
+        "name": "Video",
+        "description": "Test video that will be sent back",
+        "type": "file",
+        "required": true,
+        "accept": [
+            "video/*"
+        ]
+      },
+      {
+        "id": "text",
+        "name": "Text",
+        "description": "Test text that will be sent back backwords",
+        "type": "text",
+        "required": true
+      }
+  ],
+  "output": [
+      {
+        "id": "echo-image",
+        "type": "file",
+        "name": "Image echo",
+        "description": "Same image given as input"
+      },
+      {
+        "id": "echo-video",
+        "type": "file",
+        "name": "Video echo",
+        "description": "Same video given as input"
+      },
+      {
+        "id": "backwords-text",
+        "type": "text",
+        "name": "Text backwords",
+        "description": "Same text given as input, but backwords"
+      }
+  ],
+  "pipeline": {
+      "id": "test",
+      "queues": [
+          {
+              "env": "TEST_INPUT_QUEUE",
+              "default": "test-in"
+          },
+          {
+              "env": "TEST_OUTPUT_QUEUE",
+              "default": "test-out"
+          }
+      ],
+      "arguments": {
+          "image": "image",
+          "video": "video",
+          "text": "text"
+      },
+      "output": {
+        "image-out": "echo-image",
+        "video-out": "echo-video",
+        "text-out": "backwords-text"
+    }
+  }
+}

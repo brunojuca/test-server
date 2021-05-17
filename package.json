@@ -4,7 +4,8 @@
   "description": "test server for easytopic api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node .",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/brunojuca/test-server/issues"
   },
-  "homepage": "https://github.com/brunojuca/test-server#readme"
+  "homepage": "https://github.com/brunojuca/test-server#readme",
+  "dependencies": {
+    "amqplib": "^0.7.1"
+  }
 }
