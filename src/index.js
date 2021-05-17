@@ -35,11 +35,7 @@ async function main() {
     console.log("Running test");
 
     const args = JSON.parse(msg.content.toString());
-    const backText = "There might be a problem in the text ";
-
-    if (args.text instanceof String) {
-      backText = args.text.split("").reverse().join("");
-    }
+    const backText = args.text.split("").reverse().join("");
 
     ch.sendToQueue(qOut, Buffer.from(JSON.stringify({
       ...args,
