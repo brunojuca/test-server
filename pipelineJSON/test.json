@@ -70,9 +70,9 @@
           "text": "text"
       },
       "output": {
-        "image-out": "echo-image",
-        "video-out": "echo-video",
-        "text-out": "backwords-text"
+        "echo-image": "echo-image",
+        "echo-video": "echo-video",
+        "backwords-text": "backwords-text"
     }
   }
 }
