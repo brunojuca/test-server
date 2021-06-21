@@ -36,7 +36,7 @@ async function main() {
 
     const args = JSON.parse(msg.content.toString());
     const backText = args.text.split("").reverse().join("");
-
+    await new Promise(resolve => setTimeout(resolve, 10000));
     ch.sendToQueue(qOut, Buffer.from(JSON.stringify({
       ...args,
       'echo-image': args.image,
